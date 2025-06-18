@@ -32,13 +32,5 @@ pipeline {
                 '''    
             }
         }
-        stage('Set permissions') { 
-            steps {
-                 sh '''
-                   chown -R www-data:www-data $NGINX_ROOT_DIR
-                   chmod -R 664 $NGINX_ROOT_DIR/index.html || true
-                 '''  
-            }
-        }
     }
 }
